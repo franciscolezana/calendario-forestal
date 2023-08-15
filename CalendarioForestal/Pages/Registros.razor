@@ -1,4 +1,7 @@
 ﻿@page "/registros"
+@using CalendarioForestal.Models
+@inject HttpClient Http
+
 
 <PageTitle>Calendario</PageTitle>
 <div class="col-md-12">
@@ -7,11 +10,35 @@
     </div>
 </div>
 
-<RadzenScheduler TItem="Models.DataItem" StartProperty="Start" EndProperty="End" 
-TextProperty="Nombre" Data="@datosCalendar" LoadData="@Scheduler0LoadData" AppointmentSelect=@Scheduler0AppointmentSelect
-    Style="height: 600px" TodayText="HOY" Visible="true" Locale="es">
+<RadzenScheduler TItem="Models.DataItem" StartProperty="Start" EndProperty="End"
+                 TextProperty="Nombre" Data="@DatosCalendar" LoadData="@Scheduler0LoadData" AppointmentSelect=@Scheduler0AppointmentSelect
+                 Style="height: 600px" TodayText="HOY" Visible="true" Locale="es">
     <RadzenMonthView Text="MES" MoreText="+{0} más"></RadzenMonthView>
     <RadzenWeekView Text="SEMANA"></RadzenWeekView>
     <RadzenDayView Text="DIA"></RadzenDayView>
-    <RadzenYearView Text="AÑO"/>
+    <RadzenYearView Text="AÑO" />
 </RadzenScheduler>
+
+@*@if(dats == null)
+{
+    <p><em>Loading ... </em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IDRegistro</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reg in dats)
+            {
+                <tr>@reg.IdRegistro</tr>
+                <tr>@reg.Fecha</tr>
+            }
+        </tbody>
+    </table>
+}
+*@

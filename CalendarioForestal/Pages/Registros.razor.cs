@@ -1,6 +1,7 @@
 ﻿using CalendarioForestal.Models;
 using Microsoft.AspNetCore.Components;
 using Radzen;
+using System.Net.Http.Json;
 
 namespace CalendarioForestal.Pages
 {
@@ -8,25 +9,108 @@ namespace CalendarioForestal.Pages
     {
         [Inject]
         protected DialogService? DialogService { get; set; }
+        private List<DataItem> DatosCalendar = new List<DataItem>();
+        private List<Registro> dats = new List<Registro>();
 
-        public static List<DataItem> datosCalendar = new List<DataItem>();
-
+        //public static List<DataItem> DatosCalendar = new List<DataItem>();
         protected override async Task OnInitializedAsync()
         {
         }
 
         protected async Task Scheduler0LoadData(Radzen.SchedulerLoadDataEventArgs args)
         {
-            if (datosCalendar.Count == 0)
+            //if (DatosCalendar.Count == 0)
+            //{
+            //    DatosCalendar = await GetDatosCalendario(args);
+            //}
+            if (DatosCalendar.Count == 0)
             {
-                datosCalendar = await GetDatosCalendario(args);
+                DatosCalendar = await GetDatosCalendario(args);
             }
+
         }
+        #pragma warning disable CS8601 // Posible asignación de referencia nula
+        #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
         public async Task<List<DataItem>> GetDatosCalendario(Radzen.SchedulerLoadDataEventArgs args)
         {
             List<DataItem> datosCalendario = new List<DataItem>();
-            return datosCalendario;
+            DateTime dayCompare = new DateTime();
+            List<Registro>? registrosList = await Http.GetFromJsonAsync<List<Registro>>("api/Forestal/GetAllRegistros");
+            int contadorAct = 540;
+            try
+            {
+                for (int i = 0; i < registrosList.Count; i++)
+                {
+                    DateTime calendarDay = registrosList[i].Fecha;
+                    DataItem dItem = new DataItem();
+                    //Primer dia del mes
+                    if (dayCompare.Year == 0001)
+                    {
+                        dItem = new DataItem
+                        {
+                            Start = calendarDay.AddMinutes(contadorAct),
+                            End = calendarDay.AddMinutes(contadorAct + 60),
+                            Nombre = registrosList[i].NombreActividad,
+                            Detalles = "Detalles actividad",
+                            FaseLunar = registrosList[i].NombreFaseLunar,
+                            Epoca = registrosList[i].NombreEpoca,
+                            Tiempo = registrosList[i].NombreTiempo,
+                            Arbol = registrosList[i].NombreCicloArbol,
+                            CambioSol = registrosList[i].NombreCambioSol,
+                            Cuatrimestre = registrosList[i].NombreCuatrimestre
+                        };
+                    }
+                    else
+                    {
+                        if (dayCompare == calendarDay)
+                        {
+                            dItem = new DataItem
+                            {
+                                Start = calendarDay.AddMinutes(contadorAct),
+                                End = calendarDay.AddMinutes(contadorAct + 60),
+                                Nombre = registrosList[i].NombreActividad,
+                                Detalles = "Detalles actividad",
+                                FaseLunar = registrosList[i].NombreFaseLunar,
+                                Epoca = registrosList[i].NombreEpoca,
+                                Tiempo = registrosList[i].NombreTiempo,
+                                Arbol = registrosList[i].NombreCicloArbol,
+                                CambioSol = registrosList[i].NombreCambioSol,
+                                Cuatrimestre = registrosList[i].NombreCuatrimestre
+                            };
+                        }
+                        else
+                        {
+                            contadorAct = 540;
+                            dayCompare = calendarDay;
+                            dItem = new DataItem
+                            {
+                                Start = calendarDay.AddMinutes(contadorAct),
+                                End = calendarDay.AddMinutes(contadorAct + 60),
+                                Nombre = registrosList[i].NombreActividad,
+                                Detalles = "Detalles actividad",
+                                FaseLunar = registrosList[i].NombreFaseLunar,
+                                Epoca = registrosList[i].NombreEpoca,
+                                Tiempo = registrosList[i].NombreTiempo,
+                                Arbol = registrosList[i].NombreCicloArbol,
+                                CambioSol = registrosList[i].NombreCambioSol,
+                                Cuatrimestre = registrosList[i].NombreCuatrimestre
+                            };
+                        }
+                    }
+                    datosCalendario.Add(dItem);
+                    contadorAct += 60;
+                }
+                return datosCalendario;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        #pragma warning restore CS8601 // Posible asignación de referencia nula
+        #pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
+
 
         protected async Task Scheduler0AppointmentSelect(Radzen.SchedulerAppointmentSelectEventArgs<DataItem> args)
         {

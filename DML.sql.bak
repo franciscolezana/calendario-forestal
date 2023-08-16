@@ -30,34 +30,33 @@ INSERT INTO FASELUNAR VALUES ('Cuarto Menguante');
 INSERT INTO FASELUNAR VALUES ('Luna Nueva');
 
 --Actividades
-INSERT INTO ACTIVIDAD VALUES ('Colecta de semillas');
-INSERT INTO ACTIVIDAD VALUES ('Colecta de material vegetativo');
-INSERT INTO ACTIVIDAD VALUES ('Secado de semillas');
-INSERT INTO ACTIVIDAD VALUES ('Siembra de semillas');
-INSERT INTO ACTIVIDAD VALUES ('Manejo de germinación de semillas en viveros');
-INSERT INTO ACTIVIDAD VALUES ('Trasplante de la plántula del semillero al vivero');
-INSERT INTO ACTIVIDAD VALUES ('Limpieza del terreno definitivo');
-INSERT INTO ACTIVIDAD VALUES ('Trazado y ahoyado');
-INSERT INTO ACTIVIDAD VALUES ('Plantación o trasplante definitivo');
-INSERT INTO ACTIVIDAD VALUES ('Plateo en plantación');
-INSERT INTO ACTIVIDAD VALUES ('Replante por bajo prendimiento');
-INSERT INTO ACTIVIDAD VALUES ('Construcción y mantenimiento de rondas corta fuego');
-INSERT INTO ACTIVIDAD VALUES ('Manejo de plagas');
-INSERT INTO ACTIVIDAD VALUES ('Limpia de árboles de plantas parásitas');
-INSERT INTO ACTIVIDAD VALUES ('Chapias y/o chapear - limpia de la plantación y terreno');
-INSERT INTO ACTIVIDAD VALUES ('Injertos en árboles frutales');
-INSERT INTO ACTIVIDAD VALUES ('Podas de limpieza de árboles enfermos');
-INSERT INTO ACTIVIDAD VALUES ('Podas de formación');
-INSERT INTO ACTIVIDAD VALUES ('Podas de estimulo');
-INSERT INTO ACTIVIDAD VALUES ('Raleo');
-INSERT INTO ACTIVIDAD VALUES ('Aprovechamiento para leña y madera');
-INSERT INTO ACTIVIDAD VALUES ('Primera Canícula');
-INSERT INTO ACTIVIDAD VALUES ('Segunda Canícula');
+INSERT INTO ACTIVIDAD VALUES ('Colecta de semillas','La colecta de semillas debe realizarse en los meses de enero, febrero, marzo y diciembre, durante la época de frío y calor, cuando el árbol está en ciclo masculino. Es recomendable recolectar las semillas en luna llena, ya que en ese momento, la planta concentra savia y nutrientes en ramas, hojas y frutos, lo que beneficia directamente la calidad de las semillas. Las semillas recolectadas en esta fase lunar muestran mayor dureza ante ataques de insectos y un alto porcentaje de germinación, entre otras ventajas.');
+INSERT INTO ACTIVIDAD VALUES ('Colecta de material vegetativo','Las estacas se cortan y recolectan en enero, febrero, noviembre y diciembre, durante el ciclo masculino del árbol. La fase lunar óptima para recolectar y reproducir una nueva planta es el cuarto creciente, facilitando un rápido brote y enraizamiento. En algunas comunidades indígenas, dejan las estacas en agua por tres días o al sol hasta 15 días para mejorar el prendimiento.');
+INSERT INTO ACTIVIDAD VALUES ('Secado de semillas','El secado de semillas se realiza en enero, febrero, marzo, abril y diciembre, durante el ciclo masculino del árbol y en fase lunar de cuarto menguante. Las comunidades indígenas secan las semillas bajo el Sol directo o bajo techo, combinando la fase lunar y el Sol para mantener nutrientes y consistencia ideal, logrando un alto porcentaje de germinación. La fase lunar de cuarto menguante es la indicada para realizar esta actividad después de recolectar las semillas en fase lunar de luna llena.');
+INSERT INTO ACTIVIDAD VALUES ('Siembra de semillas','La siembra de semillas debe realizarse en enero, febrero y diciembre, durante la época de frío y el ciclo masculino del árbol. La luna llena durante la colecta, secado y almacenamiento de las semillas conserva los nutrientes, lo que contribuye a un alto porcentaje de germinación. Además, la semilla muestra resistencia a la humedad y al ataque de insectos, evitando su rápida descomposición. El riego o sistema de riego también ayuda a obtener una buena germinación.');
+INSERT INTO ACTIVIDAD VALUES ('Manejo de germinación de semillas en viveros','');
+INSERT INTO ACTIVIDAD VALUES ('Trasplante de la plántula del semillero al vivero','');
+INSERT INTO ACTIVIDAD VALUES ('Limpieza del terreno definitivo','');
+INSERT INTO ACTIVIDAD VALUES ('Trazado y ahoyado','');
+INSERT INTO ACTIVIDAD VALUES ('Plantación o trasplante definitivo','');
+INSERT INTO ACTIVIDAD VALUES ('Plateo en plantación','');
+INSERT INTO ACTIVIDAD VALUES ('Replante por bajo prendimiento','');
+INSERT INTO ACTIVIDAD VALUES ('Construcción y mantenimiento de rondas corta fuego','');
+INSERT INTO ACTIVIDAD VALUES ('Manejo de plagas','');
+INSERT INTO ACTIVIDAD VALUES ('Limpia de árboles de plantas parásitas','');
+INSERT INTO ACTIVIDAD VALUES ('Chapias y/o chapear - limpia de la plantación y terreno','');
+INSERT INTO ACTIVIDAD VALUES ('Injertos en árboles frutales','');
+INSERT INTO ACTIVIDAD VALUES ('Podas de limpieza de árboles enfermos','');
+INSERT INTO ACTIVIDAD VALUES ('Podas de formación','');
+INSERT INTO ACTIVIDAD VALUES ('Podas de estimulo','');
+INSERT INTO ACTIVIDAD VALUES ('Raleo','');
+INSERT INTO ACTIVIDAD VALUES ('Aprovechamiento para leña y madera','');
+INSERT INTO ACTIVIDAD VALUES ('Primera Canícula','');
+INSERT INTO ACTIVIDAD VALUES ('Segunda Canícula','');
 
---id, dia, mes, anio, act1, ... act23, idfaselunar, idepoca, idtiempo, idarbol, idcambiosol, idcuatrimestre
--- registro
+--id, fecha (yyyy-dd-mm), idfaselunar, idepoca, idtiempo, idarbol, idcambiosol, idcuatrimestre
 -- 2023
---yyyy-dd-m
+
 INSERT INTO REGISTRO VALUES ('2023-06-01',2,1,1,2,1,1);
 INSERT INTO REGISTRO VALUES ('2023-14-01',3,1,1,2,1,1);
 INSERT INTO REGISTRO VALUES ('2023-21-01',4,1,1,2,1,1);
@@ -133,12 +132,12 @@ INSERT INTO LISTACTIVIDAD VALUES (22,12),(22,14),(22,15),(22,17);
 INSERT INTO LISTACTIVIDAD VALUES (23,9),(23,11),(23,13),(23,18);
 INSERT INTO LISTACTIVIDAD VALUES (24,9),(24,11),(24,13),(24,18),(24,19);
 INSERT INTO LISTACTIVIDAD VALUES (25,19);
-INSERT INTO LISTACTIVIDAD VALUES (26,12),(26,14),(26,15),(26,17),(26,21);
-INSERT INTO LISTACTIVIDAD VALUES (27,9),(27,11),(27,13),(27,18),(27,21);
+INSERT INTO LISTACTIVIDAD VALUES (26,12),(26,14),(26,15),(26,17),(26,22);
+INSERT INTO LISTACTIVIDAD VALUES (27,9),(27,11),(27,13),(27,18),(27,22);
 INSERT INTO LISTACTIVIDAD VALUES (28,9),(28,11),(28,13),(28,18),(28,19);
 INSERT INTO LISTACTIVIDAD VALUES (29,19);
-INSERT INTO LISTACTIVIDAD VALUES (30,12),(30,14),(30,15),(30,17),(30,22);
-INSERT INTO LISTACTIVIDAD VALUES (31,9),(31,11),(31,13),(31,18),(31,22);
+INSERT INTO LISTACTIVIDAD VALUES (30,12),(30,14),(30,15),(30,17),(30,23);
+INSERT INTO LISTACTIVIDAD VALUES (31,9),(31,11),(31,13),(31,18),(31,23);
 INSERT INTO LISTACTIVIDAD VALUES (32,9),(32,11),(32,13),(32,18),(32,19);
 INSERT INTO LISTACTIVIDAD VALUES (33,19);
 INSERT INTO LISTACTIVIDAD VALUES (34,12),(34,14),(34,15),(34,17);
@@ -152,11 +151,11 @@ INSERT INTO LISTACTIVIDAD VALUES (41,19);
 INSERT INTO LISTACTIVIDAD VALUES (42,12),(42,14),(42,15),(42,17);
 INSERT INTO LISTACTIVIDAD VALUES (43,6),(43,13),(43,18);
 INSERT INTO LISTACTIVIDAD VALUES (44,2),(44,6),(44,13),(44,16),(44,18),(44,19);
-INSERT INTO LISTACTIVIDAD VALUES (45,1),(45,19),(45,21);
+INSERT INTO LISTACTIVIDAD VALUES (45,1),(45,19),(45,20),(45,21);
 INSERT INTO LISTACTIVIDAD VALUES (46,3),(46,12),(46,14),(46,15),(46,17);
 INSERT INTO LISTACTIVIDAD VALUES (47,6),(47,13),(47,18);
 INSERT INTO LISTACTIVIDAD VALUES (48,2),(48,6),(48,13),(48,16),(48,18),(48,19);
-INSERT INTO LISTACTIVIDAD VALUES (49,1),(49,4),(49,19),(49,21);
+INSERT INTO LISTACTIVIDAD VALUES (49,1),(49,4),(49,19),(49,20),(49,21);
 
 Select r.idRegistro,r.fecha, fl.nombreFaseLunar, e.nombreEpoca, 
 t.nombreTiempo, ar.nombreCicloArbol, c.nombreCambio, ct.nombreCuatrimestre, a.nombreActividad
@@ -169,14 +168,3 @@ JOIN tiempo as t ON t.idTiempo = r.idTiempo
 JOIN arbol as ar ON ar.idArbol = r.idArbol
 JOIN cambiosol as c ON c.idCambioSol = r.idCambioSol
 JOIN cuatrimestre as ct ON ct.idCuatrimestre = r.idCuatrimestre;
-
-
-SELECT r.idRegistro, r.dia, r.mes, r.anio, fl.nombreFaseLunar, e.nombreEpoca, t.nombreTiempo, a.nombreCicloArbol, c.nombreCambio, ct.nombreCuatrimestre
-FROM registro as r 
-JOIN faselunar as fl ON fl.idFaseLunar = r.idFaseLunar
-JOIN epoca as e ON e.idEpoca = r.idEpoca
-JOIN tiempo as t ON t.idTiempo = r.idTiempo
-JOIN arbol as a ON a.idArbol = r.idArbol
-JOIN cambiosol as c ON c.idCambioSol = r.idCambioSol
-JOIN cuatrimestre as ct ON ct.idCuatrimestre = r.idCuatrimestre
-ORDER BY idRegistro ASC;

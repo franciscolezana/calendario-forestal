@@ -15,6 +15,7 @@ namespace CalendarioForestal.Pages
             public string Nombre { get; set; } = "";
             public string Detalles { get; set; } = "";
             public string FaseLunar { get; set; } = "";
+            public string RutaFase { get; set; } = "";
             public string Epoca { get; set; } = "";
             public string Tiempo { get; set; } = "";
             public string Arbol { get; set; } = "";
@@ -66,6 +67,22 @@ namespace CalendarioForestal.Pages
             model.Arbol = Arbol;
             model.CambioSol = CambioSol;
             model.Cuatrimestre = Cuatrimestre;
+            if (FaseLunar == "Luna Llena")
+            {
+                model.RutaFase = "images/llena.png";
+            }
+            else if (FaseLunar == "Cuarto Creciente")
+            {
+                model.RutaFase = "images/creciente.png";
+            }
+            else if (FaseLunar == "Cuarto Menguante")
+            {
+                model.RutaFase = "images/menguante.png";
+            }
+            else if (FaseLunar == "Luna Nueva")
+            {
+                model.RutaFase = "images/nueva.png";
+            }
 
         }
     }

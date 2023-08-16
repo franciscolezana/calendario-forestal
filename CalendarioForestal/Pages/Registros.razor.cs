@@ -19,10 +19,6 @@ namespace CalendarioForestal.Pages
 
         protected async Task Scheduler0LoadData(Radzen.SchedulerLoadDataEventArgs args)
         {
-            //if (DatosCalendar.Count == 0)
-            //{
-            //    DatosCalendar = await GetDatosCalendario(args);
-            //}
             if (DatosCalendar.Count == 0)
             {
                 DatosCalendar = await GetDatosCalendario(args);
@@ -36,22 +32,24 @@ namespace CalendarioForestal.Pages
             List<DataItem> datosCalendario = new List<DataItem>();
             DateTime dayCompare = new DateTime();
             List<Registro>? registrosList = await Http.GetFromJsonAsync<List<Registro>>("api/Forestal/GetAllRegistros");
-            int contadorAct = 540;
+            int contadorAct = 480;
             try
             {
                 for (int i = 0; i < registrosList.Count; i++)
                 {
                     DateTime calendarDay = registrosList[i].Fecha;
+                    Console.WriteLine(registrosList[i].Fecha);
                     DataItem dItem = new DataItem();
                     //Primer dia del mes
                     if (dayCompare.Year == 0001)
                     {
+                        dayCompare = calendarDay;
                         dItem = new DataItem
                         {
                             Start = calendarDay.AddMinutes(contadorAct),
                             End = calendarDay.AddMinutes(contadorAct + 60),
                             Nombre = registrosList[i].NombreActividad,
-                            Detalles = "Detalles actividad",
+                            Detalles = registrosList[i].DescripcionActividad,
                             FaseLunar = registrosList[i].NombreFaseLunar,
                             Epoca = registrosList[i].NombreEpoca,
                             Tiempo = registrosList[i].NombreTiempo,
@@ -59,6 +57,8 @@ namespace CalendarioForestal.Pages
                             CambioSol = registrosList[i].NombreCambioSol,
                             Cuatrimestre = registrosList[i].NombreCuatrimestre
                         };
+                        Console.WriteLine(dItem.Start);
+                        Console.WriteLine(dItem.End);
                     }
                     else
                     {
@@ -69,7 +69,7 @@ namespace CalendarioForestal.Pages
                                 Start = calendarDay.AddMinutes(contadorAct),
                                 End = calendarDay.AddMinutes(contadorAct + 60),
                                 Nombre = registrosList[i].NombreActividad,
-                                Detalles = "Detalles actividad",
+                                Detalles = registrosList[i].DescripcionActividad,
                                 FaseLunar = registrosList[i].NombreFaseLunar,
                                 Epoca = registrosList[i].NombreEpoca,
                                 Tiempo = registrosList[i].NombreTiempo,
@@ -77,17 +77,19 @@ namespace CalendarioForestal.Pages
                                 CambioSol = registrosList[i].NombreCambioSol,
                                 Cuatrimestre = registrosList[i].NombreCuatrimestre
                             };
+                            Console.WriteLine(dItem.Start);
+                            Console.WriteLine(dItem.End);
                         }
                         else
                         {
-                            contadorAct = 540;
+                            contadorAct = 480;
                             dayCompare = calendarDay;
                             dItem = new DataItem
                             {
                                 Start = calendarDay.AddMinutes(contadorAct),
                                 End = calendarDay.AddMinutes(contadorAct + 60),
                                 Nombre = registrosList[i].NombreActividad,
-                                Detalles = "Detalles actividad",
+                                Detalles = registrosList[i].DescripcionActividad,
                                 FaseLunar = registrosList[i].NombreFaseLunar,
                                 Epoca = registrosList[i].NombreEpoca,
                                 Tiempo = registrosList[i].NombreTiempo,
@@ -95,6 +97,8 @@ namespace CalendarioForestal.Pages
                                 CambioSol = registrosList[i].NombreCambioSol,
                                 Cuatrimestre = registrosList[i].NombreCuatrimestre
                             };
+                            Console.WriteLine(dItem.Start);
+                            Console.WriteLine(dItem.End);
                         }
                     }
                     datosCalendario.Add(dItem);

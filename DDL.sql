@@ -53,7 +53,7 @@ CREATE TABLE dbo.ACTIVIDAD(
 
 DROP TABLE IF EXISTS dbo.REGISTRO;
 CREATE TABLE REGISTRO (
-      int NOT NULL IDENTITY(1,1),
+    idRegistro int NOT NULL IDENTITY(1,1),
     fecha datetime NOT NULL,
     idFaseLunar int NOT NULL,
     idEpoca int NOT NULL,

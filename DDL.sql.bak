@@ -47,6 +47,7 @@ DROP TABLE IF EXISTS dbo.ACTIVIDAD;
 CREATE TABLE dbo.ACTIVIDAD(
     idActividad int NOT NULL IDENTITY(1,1),
     nombreActividad varchar(120) NOT NULL,
+	descripcion varchar(800) NOT NULL,
 	PRIMARY KEY (idActividad)
 );
 

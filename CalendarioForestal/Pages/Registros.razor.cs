@@ -38,7 +38,6 @@ namespace CalendarioForestal.Pages
                 for (int i = 0; i < registrosList.Count; i++)
                 {
                     DateTime calendarDay = registrosList[i].Fecha;
-                    Console.WriteLine(registrosList[i].Fecha);
                     DataItem dItem = new DataItem();
                     //Primer dia del mes
                     if (dayCompare.Year == 0001)
@@ -57,8 +56,6 @@ namespace CalendarioForestal.Pages
                             CambioSol = registrosList[i].NombreCambioSol,
                             Cuatrimestre = registrosList[i].NombreCuatrimestre
                         };
-                        Console.WriteLine(dItem.Start);
-                        Console.WriteLine(dItem.End);
                     }
                     else
                     {
@@ -77,8 +74,6 @@ namespace CalendarioForestal.Pages
                                 CambioSol = registrosList[i].NombreCambioSol,
                                 Cuatrimestre = registrosList[i].NombreCuatrimestre
                             };
-                            Console.WriteLine(dItem.Start);
-                            Console.WriteLine(dItem.End);
                         }
                         else
                         {
@@ -97,8 +92,6 @@ namespace CalendarioForestal.Pages
                                 CambioSol = registrosList[i].NombreCambioSol,
                                 Cuatrimestre = registrosList[i].NombreCuatrimestre
                             };
-                            Console.WriteLine(dItem.Start);
-                            Console.WriteLine(dItem.End);
                         }
                     }
                     datosCalendario.Add(dItem);

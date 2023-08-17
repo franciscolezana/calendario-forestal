@@ -1,5 +1,5 @@
-CREATE DATABASE ForestalDB2;
-USE ForestalDB2;
+CREATE DATABASE ForestalDB;
+USE ForestalDB;
 
 DROP TABLE IF EXISTS dbo.CUATRIMESTRE;
 CREATE TABLE dbo.CUATRIMESTRE (
@@ -47,6 +47,7 @@ DROP TABLE IF EXISTS dbo.ACTIVIDAD;
 CREATE TABLE dbo.ACTIVIDAD(
     idActividad int NOT NULL IDENTITY(1,1),
     nombreActividad varchar(120) NOT NULL,
+	descripcion varchar(800) NOT NULL,
 	PRIMARY KEY (idActividad)
 );
 

@@ -9,117 +9,37 @@ namespace CalendarioForestal.Models
 {
     public class Registro
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public int IdRegistro { get; set; }
 
         [Required]
-        public int Dia { get; set; }
+        public DateTime Fecha { get; set; }
 
         [Required]
-        public int Mes { get; set; }
+        public string? NombreFaseLunar { get; set; } = "";
 
         [Required]
-        public int Anio { get; set; }
+        public string? NombreEpoca { get; set; } = "";
 
         [Required]
-        public bool Act1 { get; set; }
+        public string? NombreTiempo { get; set; } = "";
 
         [Required]
-        public bool Act2 { get; set; }
+        public string? NombreCicloArbol { get; set; } = "";
 
         [Required]
-        public bool Act3 { get; set; }
+        public string? NombreCambioSol { get; set; } = "";
 
         [Required]
-        public bool Act4 { get; set; }
+        public string? NombreCuatrimestre { get; set; } = "";
 
         [Required]
-        public bool Act5 { get; set; }
+        public int IdActividad { get; set; }
 
         [Required]
-        public bool Act6 { get; set; }
+        public string? NombreActividad { get; set; } = "";
 
         [Required]
-        public bool Act7 { get; set; }
-
-        [Required]
-        public bool Act8 { get; set; }
-
-        [Required]
-        public bool Act9 { get; set; }
-
-        [Required]
-        public bool Act10 { get; set; }
-
-        [Required]
-        public bool Act11 { get; set; }
-
-        [Required]
-        public bool Act12 { get; set; }
-
-        [Required]
-        public bool Act13 { get; set; }
-
-        [Required]
-        public bool Act14 { get; set; }
-
-        [Required]
-        public bool Act15 { get; set; }
-
-        [Required]
-        public bool Act16 { get; set; }
-
-        [Required]
-        public bool Act17 { get; set; }
-
-        [Required]
-        public bool Act18 { get; set; }
-
-        [Required]
-        public bool Act19 { get; set; }
-
-        [Required]
-        public bool Act20 { get; set; }
-
-        [Required]
-        public bool Act21 { get; set; }
-
-        [Required]
-        public bool Act22 { get; set; }
-
-        [Required]
-        public bool Act23 { get; set; }
-
-        [Required]
-        public int idFaseLunar { get; set; }
-
-        [Required]
-        public int IdEpoca { get; set; }
-
-        [Required]
-        public int IdTiempo { get; set; }
-
-        [Required]
-        public int IdArbol { get; set; }
-
-        [Required]
-        public int IdCambioSol { get; set; }
-
-        [Required]
-        public int IdCuatrimestre { get; set; }
-
-        public Arbol? Arbol { get; set; }
-
-        public CambioSol? CambioSol { get; set; }
-
-        public Cuatrimestre? Cuatrimestre { get; set; }
-
-        public Epoca? Epoca { get; set; }
-
-        public FaseLunar? FaseLunar { get; set; }
-
-        public Tiempo? Tiempo { get; set; }
-
+        public string? DescripcionActividad { get; set; } = "";
     }
 }

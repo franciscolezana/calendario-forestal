@@ -34,5 +34,8 @@ namespace CalendarioForestalServer.Models
 
         [Required]
         public string ?NombreActividad { get; set; } = "";
+
+        [Required]
+        public string? DescripcionActividad { get; set; } = "";
     }
 }

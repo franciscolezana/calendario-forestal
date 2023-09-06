@@ -17,6 +17,10 @@
         top: 0.5rem;
     }
 
+.rz-button {
+    background: #b32121 !important;
+}
+
 :root {
     font-size: var(--rz-root-font-size);
     --rz-text-font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -88,3 +92,4 @@ a {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+

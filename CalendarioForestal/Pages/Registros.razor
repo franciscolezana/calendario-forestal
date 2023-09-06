@@ -1,18 +1,19 @@
-﻿@page "/registros"
+@page "/registros"
 @using CalendarioForestal.Models
 @inject HttpClient Http
+
 
 
 <PageTitle>Calendario</PageTitle>
 <div class="col-md-12">
     <div class="col-12">
-        <RadzenText Text="CALENDARIO FORESTAL" TextStyle="Radzen.Blazor.TextStyle.DisplayH3" TagName="Radzen.Blazor.TagName.Auto" Style="text-align: center" TextAlign="Radzen.TextAlign.Center"></RadzenText>
+        <RadzenText Text="CALENDARIO FORESTAL" TextStyle="Radzen.Blazor.TextStyle.DisplayH3" TagName="Radzen.Blazor.TagName.Auto" Style="text-align: center; font-family: Helvetica Neue; color: rgb(35, 31, 32)" TextAlign="Radzen.TextAlign.Center"></RadzenText>
     </div>
 </div>
 
 <RadzenScheduler TItem="Models.DataItem" StartProperty="Start" EndProperty="End"
-                 TextProperty="Nombre" Data="@DatosCalendar" LoadData="@Scheduler0LoadData" AppointmentSelect=@Scheduler0AppointmentSelect
-                 Style="height: 600px" TodayText="HOY" Visible="true" Locale="es">
+                 TextProperty="Nombre" Data="@DatosCalendar" LoadData="@Scheduler0LoadData" AppointmentSelect=@Scheduler0AppointmentSelect AppointmentRender="@OnAppointmentRender"
+                 Style="height: 600px; font-family: Helvetica Neue; color: rgb(35, 31, 32)" TodayText="HOY" Visible="true" Locale="es">
     <RadzenMonthView Text="MES" MoreText="+{0} más"></RadzenMonthView>
     <RadzenWeekView Text="SEMANA"/>
     <RadzenDayView Text="DIA"/>

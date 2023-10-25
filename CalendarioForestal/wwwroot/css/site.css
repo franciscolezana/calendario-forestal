@@ -17,24 +17,33 @@
         top: 0.5rem;
     }
 
-.rz-button {
+/*.rz-button {
     background: #b32121 !important;
+}*/
+
+.scheduler-nav-title {
+    text-transform: uppercase !important;
 }
 
 :root {
     font-size: var(--rz-root-font-size);
-    --rz-text-font-family: Source Sans Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --rz-text-font-family: Helvetica Neue;
     --rz-primary: #d64d42;
     --rz-primary-light: #db6259;
     --rz-base-900: #3a582b;
 }
 
-body {
-    font-family: var(--rz-text-font-family);
-    color: var(--rz-text-color);
-    font-size: var(--rz-body-font-size);
-    line-height: var(--rz-body-line-height);
-    background-color: var(--rz-body-background-color);
+.rz-year-view .rz-slot .rz-slot-title.rz-has-appointments {
+    color: var(--rz-scheduler-event-color);
+    background-color: #80ba27;
+}
+
+.rz-event-content {
+    font-family: Helvetica Neue;
+}
+
+.rz-dialog-titlebar {
+    font-family: Helvetica Neue;
 }
 
 .rz-body {

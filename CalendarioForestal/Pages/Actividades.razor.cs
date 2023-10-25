@@ -10,6 +10,7 @@ namespace CalendarioForestal.Pages
 
         public class DataItem
         {
+            public string Cenit { get; set; } = "";
             public string Start { get; set; } = "";
             public string End { get; set; } = "";
             public string Nombre { get; set; } = "";
@@ -22,6 +23,7 @@ namespace CalendarioForestal.Pages
             public string CambioSol { get; set; } = "";
             public string Cuatrimestre { get; set; } = "";
         }
+
 
         [Parameter]
         public DateTime Start { get; set; }
@@ -57,8 +59,9 @@ namespace CalendarioForestal.Pages
 
         protected override void OnParametersSet()
         {
-            model.Start = Start.AddDays(-1).ToString("dd/MM/yyyy");
-            model.End = End.AddDays(1).ToString("dd/MM/yyyy");
+            model.Cenit = Start.ToString("dd/MM/yyyy");
+            model.Start = Start.AddDays(-3).ToString("dd/MM/yyyy");
+            model.End = End.AddDays(3).ToString("dd/MM/yyyy");
             model.Nombre = Nombre;
             model.Detalles = Detalles;
             model.FaseLunar = FaseLunar;

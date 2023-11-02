@@ -1,4 +1,4 @@
-﻿using CalendarioForestal.Models;
+using CalendarioForestal.Models;
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using System.Net.Http.Json;
@@ -17,7 +17,7 @@ namespace CalendarioForestal.Pages
         {
         }
 
-        protected async Task Scheduler0LoadData(Radzen.SchedulerLoadDataEventArgs args)
+        protected async Task Scheduler0LoadData(SchedulerLoadDataEventArgs args)
         {
             if (DatosCalendar.Count == 0)
             {
@@ -25,9 +25,17 @@ namespace CalendarioForestal.Pages
             }
 
         }
-        #pragma warning disable CS8601 // Posible asignación de referencia nula
-        #pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-        public async Task<List<DataItem>> GetDatosCalendario(Radzen.SchedulerLoadDataEventArgs args)
+
+        void OnAppointmentRender(SchedulerAppointmentRenderEventArgs<DataItem> args)
+        {
+            // Highlight today in month view
+            args.Attributes["style"] = "background: #80ba27";
+        }
+
+
+#pragma warning disable CS8601 // Posible asignación de referencia nula
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
+        public async Task<List<DataItem>> GetDatosCalendario(SchedulerLoadDataEventArgs args)
         {
             List<DataItem> datosCalendario = new List<DataItem>();
             DateTime dayCompare = new DateTime();
@@ -111,7 +119,7 @@ namespace CalendarioForestal.Pages
 
         protected async Task Scheduler0AppointmentSelect(Radzen.SchedulerAppointmentSelectEventArgs<DataItem> args)
         {
-            await DialogService.OpenAsync<Actividades>("Detalle de Actividad", new Dictionary<string, object>()  {
+            await DialogService.OpenAsync<Actividades>("", new Dictionary<string, object>()  {
                 { "Start", args.Start },
                 { "End", args.End },
                 { "Nombre", args.Data.Nombre },

@@ -1,43 +1,50 @@
-﻿@page "/actividades"
+@page "/actividades"
 
-<PageTitle>Detalle de Actividad</PageTitle>
+<PageTitle>Detalles de Actividad</PageTitle>
 
 <RadzenCard Class="rz-my-4 rz-mx-auto" Style="max-width: 420px; position: relative">
     <RadzenCard class="rz-background-color-success-lighter rz-shadow-0 rz-border-radius-0 rz-p-8" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
-        <RadzenText TextStyle="Radzen.Blazor.TextStyle.H4" class="rz-color-base-900" Text="" TextAlign="Radzen.TextAlign.Left"><strong>@model.Nombre</strong></RadzenText>
+        <RadzenText TextStyle="Radzen.Blazor.TextStyle.H4" class="rz-color-base-900" Text="" TextAlign="Radzen.TextAlign.Center" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><strong>@model.Nombre</strong></RadzenText>
         <RadzenRow RowGap="0">
-            <RadzenColumn SizeSM="6" Style="width: 180px">
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="width: 180px">inicio de Actividad</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1" Style="width: 182px"><b>@model.Start</b></RadzenText>
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="width: 180px">Fin de Actividad</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1" Style="width: 18px"><b>@model.End</b></RadzenText>
+            <RadzenColumn SizeSM="12" Style="text-align: center; position: relative">
+                <RadzenText TextStyle="TextStyle.Overline"  class="rz-color-success-darker rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue;color: rgb(71, 125, 26)"><b>Cenit Lunar</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Cenit</b></RadzenText>
             </RadzenColumn>
-            <RadzenColumn SizeSM="6" Style="width: 180px; text-align: center; position: static">
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Fase Lunar</RadzenText>
+        </RadzenRow>
+        <RadzenRow RowGap="0">
+            <RadzenColumn SizeSM="12" Style="text-align: center; position: relative">
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Fase Lunar</b></RadzenText>
+                <br />
                 <RadzenImage Style="width: 70px; height: 70px; vertical-align: middle; text-align: center" Path="@model.RutaFase"></RadzenImage>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.FaseLunar</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue;color: rgb(35, 31, 32)"><b>@model.FaseLunar</b></RadzenText>
             </RadzenColumn>
         </RadzenRow>
         <RadzenRow RowGap="0">
             <RadzenColumn SizeSM="6">
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Ciclo de Vida del Arbol</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.Arbol</b></RadzenText>
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Epoca del Año</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.Epoca</b></RadzenText>
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Cuatrimestre</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.Cuatrimestre</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="width: 180px; font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Inicio de Actividad</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="width: 182px; font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Start</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Epoca del Año</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Epoca</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Cuatrimestre</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Cuatrimestre</b></RadzenText>
             </RadzenColumn>
             <RadzenColumn SizeSM="6">
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Cambio del Sol</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.CambioSol</b></RadzenText>
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Tiempo del Año</RadzenText>
-                <RadzenText TextStyle="TextStyle.Body1"><b>@model.Tiempo</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="width: 180px; font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Fin de Actividad</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="width: 18px; font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.End</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Cambio del Sol</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.CambioSol</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Tiempo del Año</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Tiempo</b></RadzenText>
+            </RadzenColumn>
+            <RadzenColumn SizeSM="12">
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Ciclo de Vida del Arbol</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Arbol</b></RadzenText>
             </RadzenColumn>
         </RadzenRow>
         <RadzenRow RowGap="0">
             <RadzenColumn SizeSM="12">
-                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0">Detalles</RadzenText>
-                <RadzenText TextAlign="TextAlign.Justify" TextStyle="TextStyle.Body1"><b>@model.Detalles</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-color-success-darker rz-display-flex rz-mt-4 rz-mb-0" Style="font-family: Helvetica Neue; color: rgb(71, 125, 26)"><b>Detalles</b></RadzenText>
+                <RadzenText TextAlign="TextAlign.Justify" TextStyle="TextStyle.Body1" Style="font-family: Helvetica Neue; color: rgb(35, 31, 32)"><b>@model.Detalles</b></RadzenText>
              </RadzenColumn>
         </RadzenRow>
     </RadzenCard>

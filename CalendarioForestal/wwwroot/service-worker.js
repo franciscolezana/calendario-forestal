@@ -41,6 +41,7 @@ async function onActivate(event) {
 }
 
 async function onFetch(event) {
+    console.info('Service worker: Fetching');
     let cachedResponse = null;
     const isAPIGetRequest = event.request.url.includes('api/');
     if (event.request.method === 'GET' && !isAPIGetRequest) {

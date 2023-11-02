@@ -102,3 +102,17 @@ a {
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
+.rz-dialog {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    z-index: var(--rz-dialog-zindex);
+    opacity: 1;
+    background-color: var(--rz-dialog-background-color);
+    box-shadow: var(--rz-dialog-shadow);
+    border-radius: var(--rz-dialog-border-radius);
+}

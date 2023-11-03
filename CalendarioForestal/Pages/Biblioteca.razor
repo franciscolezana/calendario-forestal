@@ -1,4 +1,4 @@
-﻿@page "/biblioteca"
+@page "/biblioteca"
 @using CalendarioForestal.Models
 @inject HttpClient Http
 
@@ -7,7 +7,7 @@
 <div class="row pt-5 px-5">
    <div class="col-md-12">
         <div class="col-12">
-            <RadzenText Text="BIBLIOTECA DE RECURSOS" TextStyle="Radzen.Blazor.TextStyle.DisplayH3" TagName="Radzen.Blazor.TagName.Auto" Style="text-align: center; font-weight: 700; font-size: 50px" TextAlign="Radzen.TextAlign.Center"></RadzenText>
+            <RadzenText Text="BIBLIOTECA DE RECURSOS" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.Auto" Style="text-align: center; font-weight: 700; font-size: 25px" TextAlign="Radzen.TextAlign.Center"></RadzenText>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@
                             <img src="@fileElement.image" alt="Calendario" style="width: 150px; height: 150px">
                         </a>
                 </div>
-                <RadzenButton Style="background-color: #42d684; text-decoration: none" Click="@(args => OpenViewer(fileElement.image))">Ver Calendario</RadzenButton>
+                <RadzenButton Style="background-color: rgb(71, 125, 26); text-decoration: none" Click="@(args => OpenViewer(fileElement.image))"><RadzenIcon Icon="find_in_page"></RadzenIcon>Ver Archivo</RadzenButton>
             </RadzenCard>
         </Template>
     </RadzenDataList>

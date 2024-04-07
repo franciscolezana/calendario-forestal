@@ -1,5 +1,6 @@
 using CalendarioForestal.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Radzen;
 using System.Net.Http.Json;
 
@@ -131,6 +132,15 @@ namespace CalendarioForestal.Pages
                 { "CambioSol", args.Data.CambioSol },
                 { "Cuatrimestre", args.Data.Cuatrimestre },
                  });
+        }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                // Scroll to the top of the page
+                JSRuntime.InvokeAsync<object>("scrollToTop");
+            }
         }
 
     }

@@ -30,7 +30,7 @@ namespace CalendarioForestalServer.Controllers
             if (dt.Rows.Count>0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
-                {
+                { 
                     Registro registro = new();
                     registro.IdRegistro = Convert.ToInt32(dt.Rows[i]["idRegistro"]);
                     registro.Fecha = (DateTime)dt.Rows[i]["fecha"];

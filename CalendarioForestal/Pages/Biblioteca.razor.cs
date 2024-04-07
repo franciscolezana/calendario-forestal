@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Radzen;
 
 namespace CalendarioForestal.Pages
@@ -48,6 +49,15 @@ namespace CalendarioForestal.Pages
             await DialogService.OpenAsync<Viewer>("", new Dictionary<string, object>()  {
                 { "imageURL", imageURL }
                  });
+        }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                // Scroll to the top of the page
+                JSRuntime.InvokeAsync<object>("scrollToTop");
+            }
         }
 
     }

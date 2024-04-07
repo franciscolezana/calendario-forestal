@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Radzen;
 
 namespace CalendarioForestal.Pages
@@ -87,6 +88,15 @@ namespace CalendarioForestal.Pages
                 model.RutaFase = "images/nueva.png";
             }
 
+        }
+
+        protected override void OnAfterRender(bool firstRender)
+        {
+            if (firstRender)
+            {
+                // Scroll to the top of the page
+                JSRuntime.InvokeAsync<object>("scrollToTop");
+            }
         }
     }
 }
